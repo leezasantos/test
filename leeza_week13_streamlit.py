@@ -81,22 +81,23 @@ st.subheader('Top 10 Highest Discharge Rates and Outpatient Services')
 st.markdown('The bar charts below displays inpatient hospitals with the highest discharge rates and outpatient facilities with the highest services in NY.')
 
 df_bar1 = inpatient_ny[['provider_name','total_discharges']]
-bar1 = df_bar1[2077:2087]
+source1 = df_bar1[2077:2087]
  
-bar1 = alt.Chart(bar1).mark_bar().encode(
+bar1 = alt.Chart(source1).mark_bar().encode(
     x='provider_name',
-    y='total_discharges',
-    legend=alt.Legend(title='Top Inpatient Discharges NY')
-)
+    y='total_discharges'
+    )
+st.altair_chart(bar1)
+
 
 df_bar2 = outpatient_ny[['provider_name','outpatient_services']]
-bar2 = df_bar2[321:331]
+source2 = df_bar2[321:331]
 
-bar2 = alt.Chart(bar2).mark_bar().encode(
+bar2 = alt.Chart(source2).mark_bar().encode(
     x='provider_name',
-    y='outpatient_services',
-    legend=alt.Legend(title='Top Outpatient Facilities Services NY')
-)
+    y='outpatient_services'
+    )
+st.altair_chart(bar2)
 
 
 
@@ -124,7 +125,7 @@ bar3 = pd.DataFrame({
     'NY vs Elmhurst': ['All NY Hospital Average', 'Elmhurst Hospital Center'],
     'Score': [11.7375, 5, ],
 })
-
+st.dataframe(bar3)
 
 
 #Bar Chart
