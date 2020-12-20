@@ -44,12 +44,12 @@ outpatient_ny = df_outpatient_2[df_outpatient_2['provider_state'] == 'NY']
 
 
 
-st.title('Analysis of 2015 Medicare Data of New York Inpatient and Outpatient Hospital Facilities')
+st.title('Analysis of New York Inpatient and Outpatient Facilities 2015 Medicare Data')
 
-st.text('By: Leeza A. Santos')
+st.subheader('By: Leeza A. Santos')
 
-st.text('Last Updated: 12/20/2020')
-
+st.subheader('Last Updated: 12/20/2020')
+ 
 st.header('This dashboard displays reported Medicare data on New York inpatient and outpatient hospital facilities utilizing Python programming language and deployed by Streamlit. ')
 
 
@@ -65,7 +65,7 @@ st.write(f"You selected option {option} called {format_func(option)}")
 
 
 st.subheader('Total Discharges and Average Medicare Payments by City')
-st.text('The scatterplot below displays inpatient hospitals with the highest discharge rates and outpatient facilities with the highest services in NY.')
+st.markdown('The scatterplot below displays inpatient hospitals with the highest discharge rates and outpatient facilities with the highest services in NY. To view all counties, please enlarge the graph.')
 
 circle1 = inpatient_ny[['provider_city', 'total_discharges', 'average_medicare_payments']]
 
@@ -78,7 +78,7 @@ st.altair_chart(c, use_container_width=True)
 
 
 st.subheader('Top 10 Highest Discharge Rates and Outpatient Services')
-st.text('The bar charts below displays inpatient hospitals with the highest discharge rates and outpatient facilities with the highest services in NY.')
+st.markdown('The bar charts below displays inpatient hospitals with the highest discharge rates and outpatient facilities with the highest services in NY.')
 
 df_bar1 = inpatient_ny[['provider_name','total_discharges']]
 bar1 = df_bar1[2077:2087]
